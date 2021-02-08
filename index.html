@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    
+</head>
+<style>
+  .bg-img{
+    background-image: url("./media/bg.gif");
+  }
+</style>
+
+<body class="bg-img pt-5 mt-5">
+    <div class="container bg-light" style="border-radius: 10px; box-shadow: 2px 2px 20px cyan;"> 
+        <div class="row pt-5 pb-5 mt-5 justify-content-center">
+          <div class="col-10 p-lg-5 p-0 pb-3 text-center" >
+            <h1 style="font-family:cursive;text-shadow: 2px 2px 5px #5bc0de;font-weight: 800;">Currency Converter</h1>
+          </div>
+            <div class="col-10">
+                <div class="input-group mb-3" style="box-shadow: 0px 0px 10px #5bc0de;">
+                    
+                   
+                    <div class="col-lg-4 col-12 input-group-text p-0">
+                        <div class="dropdown" style="width: 100%;">
+                            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%;">
+                              
+                            </button>
+                            <ul class="p-0 dropdown-menu text-center" aria-labelledby="dropdownMenuButton1" id="names1" style="height: 200px; width: 100%; overflow: scroll;">
+
+                            </ul>
+                            <div data-bs-spy="scroll" data-bs-target="#names1" data-bs-offset="0" tabindex="0"></div>
+                          </div>
+                        </div>
+                        <div class="col-lg-1 col-3 input-group-text m-0" id="code1">Code</div>
+                        <div class="col-lg-1 col-2 m-0 p-2" id="symbol1" style="text-align: right; font-weight: 500;">
+                          Symbol
+                        </div>
+                    <input type="number" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" id="value1" placeholder="Enter Amount">
+                  </div>
+            </div>
+            <div class="col-10 text-center p-3">
+              <h4 style="text-shadow: 2px 2px 5px #5bc0de;">To</h4>
+            </div>
+            <div class="col-10">
+                <div class="input-group mb-3" style="box-shadow: 0px 0px 10px #5bc0de;">
+                    
+                    
+                    <span class="col-lg-4 col-12 input-group-text p-0">
+                        <div class="dropdown" style="width: 100%;">
+                            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%;">
+                              Currency Names
+                            </button>
+                            <ul class="p-0 dropdown-menu text-center" aria-labelledby="dropdownMenuButton2" id="names2" style="height: 200px; width: 100%;overflow: scroll;">
+                            </ul>
+                          </div>
+                    </span>
+                    <span class="col-lg-1 col-3 input-group-text m-0" id="code2">Code</span>
+                    <div class="col-lg-1 col-2 m-0 p-2" id="symbol2" style="text-align: right; font-weight: 500;">
+                      Symbol
+                    </div>
+                    <input type="number" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" id="value2" placeholder="Enter Amount" disabled="true">
+                  </div>
+            </div>
+        </div>
+    </div>
+    <script src="/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+
+</html>
