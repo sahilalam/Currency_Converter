@@ -3,9 +3,16 @@ let currency_symbol={};
 let currency_code=[];
 let curr_rate=0;
 let getdata=async function(url){
-    let data=await fetch(url);
-    data=await data.json();
-    return data;
+    try{
+        let data=await fetch(url);
+        data=await data.json();
+        return data;
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
+    
 }
 let setbutton=(button,currency_code,num,name,symbol)=>{
     button.setAttribute('class','btn btn-outline-info dropdown_item');
@@ -16,19 +23,26 @@ let setbutton=(button,currency_code,num,name,symbol)=>{
     button.innerText=name;
 
     button.onclick=async()=>{
-        document.getElementById('dropdownMenuButton'+num).innerText=name;
-        document.getElementById('code'+num).innerText=currency_code;
-        document.getElementById('symbol'+num).innerText=symbol;
-        document.getElementById('value1').value=0;
-        document.getElementById('value2').value=0;
+        try{
+            document.getElementById('dropdownMenuButton'+num).innerText=name;
+            document.getElementById('code'+num).innerText=currency_code;
+            document.getElementById('symbol'+num).innerText=symbol;
+            document.getElementById('value1').value=0;
+            document.getElementById('value2').value=0;
 
-        let code1=document.getElementById('code1').innerText;
-        let code2=document.getElementById('code2').innerText;
+            let code1=document.getElementById('code1').innerText;
+            let code2=document.getElementById('code2').innerText;
 
-        let exchange_rate_data=await fetch(`https://api.exchangeratesapi.io/latest?base=${code1}&symbols=${code2}`);
-        exchange_rate_data=await exchange_rate_data.json();
+            let exchange_rate_data=await fetch(`https://api.exchangeratesapi.io/latest?base=${code1}&symbols=${code2}`);
+            exchange_rate_data=await exchange_rate_data.json();
 
-        curr_rate=exchange_rate_data['rates'][code2];
+            curr_rate=exchange_rate_data['rates'][code2];
+        }
+        catch(err)
+        {
+            console.log(err);
+        }
+        
     }
 
 }
@@ -69,14 +83,14 @@ getdata("https://restcountries.eu/rest/v2/all").then((data)=>{
     }
     document.getElementById('INR1').click();
     document.getElementById('USD2').click();
-    document.getElementById('value1').onkeyup=async()=>{
+    document.getElementById('value1').onkeyup=()=>{
         let amount=document.getElementById('value1').value;
         let converted_data=curr_rate*amount;
 
         document.getElementById('value2').value=converted_data;        
 
     }
-    document.getElementById('value1').onclick=async()=>{
+    document.getElementById('value1').onclick=()=>{
         let amount=document.getElementById('value1').value;
         let converted_data=curr_rate*amount;
         
