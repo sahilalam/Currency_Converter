@@ -33,7 +33,7 @@ let setbutton=(button,currency_code,num,name,symbol)=>{
             let code1=document.getElementById('code1').innerText;
             let code2=document.getElementById('code2').innerText;
 
-            let exchange_rate_data=await fetch(`https://api.exchangeratesapi.io/v1/latest?access_key=e077d4aaed97856fbd6b59219914797c`);
+            let exchange_rate_data=await fetch(`http://api.exchangeratesapi.io/v1/latest?access_key=e077d4aaed97856fbd6b59219914797c`);
             exchange_rate_data=await exchange_rate_data.json();
             
             let rate1=1,rate2=1;
@@ -71,7 +71,7 @@ getdata("https://restcountries.eu/rest/v2/all").then((data)=>{
             }
         }
     }
-    return getdata(`https://api.exchangeratesapi.io/v1/latest?access_key=e077d4aaed97856fbd6b59219914797c`);
+    return getdata(`http://api.exchangeratesapi.io/v1/latest?access_key=e077d4aaed97856fbd6b59219914797c`);
 }).then((data)=>{
    
     currency_code=Object.keys(data['rates']);
